@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes,Route } from "react-router";
+import BasicDetailsForm from "./component/BasicDetailsForm";
+import DocumentCollection from "./component/DocumentCollection";
+import StatementPurpose from "./component/StatementPurpose";
+import './App.css'
+import InterviewAvailblity from "./component/InterviewAvailblity";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+    
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<BasicDetailsForm/>}/>
+        <Route path='/DocumentCollection' element={<DocumentCollection/>}/>
+        <Route path='/StatementPurpose' element={<StatementPurpose/>}/>
+        <Route path='/InterviewAvailblity' element={<InterviewAvailblity/>}/>
+      </Routes>
+      
+      </BrowserRouter>
     </div>
   );
 }
