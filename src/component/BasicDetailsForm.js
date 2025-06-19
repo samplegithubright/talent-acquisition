@@ -35,9 +35,14 @@ export default function BasicDetailsForm() {
     } else {
       setErrors({});
       // Submit logic here (e.g., API call)
-      const response = await axios.post('https://assessments-xhy0.onrender.com/api-docs/submit', formData);
-      console.log('Response:', response.data);
-      console.log('Form Submitted', formData);
+      const response = await axios.post('https://assessments-xhy0.onrender.com/api-docs/submit', formData,{
+headers:{
+  'Content-Type':'application/json',
+},
+      });
+    console.log(response.data);
+    console.log('form submitting',formData);
+      
       navigate('/DocumentCollection')
     }
   };

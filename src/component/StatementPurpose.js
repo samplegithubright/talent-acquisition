@@ -39,7 +39,11 @@ const navigate=useNavigate();
       
       return false;
     }else{
-        const response = await axios.post('https://assessments-xhy0.onrender.com/api-docs/submit', formData);
+        const response = await axios.post('https://assessments-xhy0.onrender.com/api-docs/submit', formData,{
+          headers:{
+            'Content-Type':'application/json',
+          },
+        });
       console.log('Response:', response.data);
       console.log('Submitted Data:', formData);
       navigate('/InterviewAvailblity')

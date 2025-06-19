@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-
-
 import axios from 'axios';
 import { useNavigate } from 'react-router';
 
@@ -52,7 +50,11 @@ const navigate=useNavigate();
 
     if (Object.keys(validationErrors).length === 0) {
      
-        const response = await axios.post('https://assessments-xhy0.onrender.com/api-docs/submit', formData);
+        const response = await axios.post('https://assessments-xhy0.onrender.com/api-docs/submit', formData,{
+          headers:{
+            'Content-Type':'application/json',
+          },
+        });
          console.log("Form submitted:", formData);
       console.log('Response:', response.data);
       alert('All data submit successfully');

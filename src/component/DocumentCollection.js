@@ -36,7 +36,11 @@ const navigate=useNavigate();
       return false;
     }
       else{
-        const response = await axios.post('https://assessments-xhy0.onrender.com/api-docs/upload-file', formData);
+        const response = await axios.post('https://assessments-xhy0.onrender.com/api-docs/upload-file', formData,{
+          headers:{
+            'Content-Type':'application/json',
+          },
+        });
     console.log(response.data.fileUrl);
 console.log("Form submitted", formData);
 navigate('/StatementPurpose');
